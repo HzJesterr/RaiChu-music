@@ -16,32 +16,34 @@ from RaiChu.config import (
 @Client.on_callback_query(filters.regex("cbstart"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""**I ᴀᴍ 𝘽𝙤𝙩 𝘿𝙪𝙣𝙞𝙮𝙖 𝙈𝙪𝙨𝙞𝙘   
-ʙᴏᴛ ʜᴀɴᴅʟᴇ ʙʏ [KIGO](https://t.me/INSANE_BOTS)
-Thanks to add me 😇**
+        f"""**Merhaba, ben Panthora ❤️
+
+            Telegram görüntülü sohbetinde müzik ve video hatta YouTube uzerinden canlı yayın oynatabilirim.😁😁
+
+            Powered by❤️ @panthorasupport**
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Handle", url="https://t.me/Shubhanshutya"
+                         "**Sahibim**", url="https://t.me/yazilimcikari"
                     ),
                     InlineKeyboardButton(
-                        "𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐋𝐢𝐬𝐭", callback_data="cbbasic"
+                        "**Komutlar**", callback_data="cbcmds"
                     ),
                     InlineKeyboardButton(
-                        "How to add me🤷", callback_data="cbhowtouse"
+                        "**Beni Nasıl Kullanırsın ?🤠**", callback_data="cbhowtouse"
                     ),
                   ],[
                     InlineKeyboardButton(
-                       " 𝐒𝐮𝐩𝐩𝐨𝐫𝐭👿", url="https://t.me/godzilla_chatting"
+                       " 𝐒𝐮𝐩𝐩𝐨𝐫𝐭👿", url="https://t.me/panthorasupport"
                     ),
                     InlineKeyboardButton(
-                        "𝐔𝐩𝐝𝐚𝐭𝐞𝐬", url="https://t.me/INSANE_BOTS"
+                        "𝐔𝐩𝐝𝐚𝐭𝐞𝐬", url="https://t.me/panthorabots"
                     )
                 ],[
                     InlineKeyboardButton(
-                        "➕ 𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩➕",
+                        "➕** Gruba Ekle **➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ]
@@ -54,24 +56,22 @@ Thanks to add me 😇**
 @Client.on_callback_query(filters.regex("cbhowtouse"))
 async def cbguides(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""❓ **Basic Guide for using this bot:**
+        f"""❓ **Bu botu kullanmak için Temel Kılavuz:**
         
-⊙ https://telegra.ph/file/9fa805e33e58bac5127a1.mp4
 
-1.) **First, add me to your group.**
-2.) **Then, promote me as administrator and give all permissions except Anonymous Admin.**
-3.) **After promoting me, type /reload in group to refresh the admin data.**
-3.) **Add @{ASSISTANT_NAME} to your group or type /userbotjoin to invite her.**
-4.) **Turn on the video chat first before start to play video/music.**
-5.) **Sometimes, reloading the bot by using /reload command can help you to fix some problem.**
 
-📌 **If the userbot not joined to video chat, make sure if the video chat already turned on, or type /userbotleave then type /userbotjoin again.**
+1.) **İlk önce beni grubunuza ekleyin.**
+2.) **Ardından beni yönetici olarak yükseltin ve Anonim Yönetici dışındaki tüm izinleri verin..**
+3.) **Beni terfi ettirdikten sonra, yönetici verilerini yenilemek için gruba /reload yazın.**
+3.) **Grubunuza @{ASSISTANT_NAME} ekleyin veya onu davet etmek için /userbotjoin yazın.**
+4.) **Video/müzik oynatmaya başlamadan önce görüntülü sohbeti açın.**
+5.) **Bazen, /reload komutunu kullanarak botu yeniden yüklemek bazı sorunları çözmenize yardımcı olabilir.**
 
-💡 **If you have a follow-up questions about this bot, you can tell it on my support chat here: @{GROUP_SUPPORT}**
+📌 **Userbot görüntülü sohbete katılmadıysa, görüntülü sohbetin zaten açık olduğundan emin olun veya /userbotleave yazıp tekrar /userbotjoin yazın.**
 
-**✨ ᴘᴏᴡᴇʀᴅ ʙʏ  Kɪɢᴏ** """,
+💡 **Bu bot hakkında takip eden sorularınız varsa, bunu buradaki destek sohbetimde iletebilirsiniz.: @{GROUP_SUPPORT}** """,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("ʙ ᴀ ᴄ ᴋ", callback_data="cbstart")]]
+            [[InlineKeyboardButton("**GERİ DÖN**", callback_data="cbstart")]]
         ),
     )
 
@@ -79,20 +79,20 @@ async def cbguides(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbcmds"))
 async def cbcmds(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""✨ **Hello [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
+        f"""✨ **Merhaba [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
 
-» **press the button below to read the explanation and see the list of available commands !**
+» **Açıklamayı okumak ve mevcut komutların listesini görmek için aşağıdaki düğmeye basın !**
 
-**✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Kɪɢᴏ!** """,
+**✗ DEVELOPER BY @yazilimcikari** """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👷🏻 ᴀᴅᴍɪɴ ᴄᴍᴅ", callback_data="cbadmin"),
-                    InlineKeyboardButton("🧙🏻 ꜱᴜᴅᴏ ᴄᴍᴅ", callback_data="cbsudo"),
+                    InlineKeyboardButton("👷🏻 **ADMİN KOMUTLARI**", callback_data="cbadmin"),
+                    InlineKeyboardButton("🧙🏻 **SUDO KOMUTLARI**", callback_data="cbsudo"),
                 ],[
-                    InlineKeyboardButton("📚 ʙᴀꜱɪᴄ ᴄᴍᴅ", callback_data="cbbasic")
+                    InlineKeyboardButton("📚 **BASİT KOMUTLAR**", callback_data="cbbasic")
                 ],[
-                    InlineKeyboardButton("ʙ ᴀ ᴄ ᴋ", callback_data="cbstart")
+                    InlineKeyboardButton("**GERİ DÖN**", callback_data="cbstart")
                 ],
             ]
         ),
@@ -102,21 +102,19 @@ async def cbcmds(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbbasic"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""ℹ️ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐋𝐢𝐬𝐭 !
+        f"""ℹ️ **BASİT KOMUTLAR**!
 
-👩🏻‍💼 » /play - Type this with give the song title or youtube link or audio file to play Music. (Remember to don't play YouTube live stream by using this command!, because it will cause unforeseen problems.)
+👩🏻‍💼 » /play - Müzik çalmak için şarkı başlığını veya youtube bağlantısını veya ses dosyasını vererek bunu yazın. (Bu komutu kullanarak YouTube canlı akışını oynatmayı unutmayın!, çünkü bu öngörülemeyen sorunlara neden olacaktır.)
 
-👩🏻‍💼 » /vplay - Type this with give the song title or youtube link or video file to play Video. (Remember to don't play YouTube live video by using this command!, because it will cause unforeseen problems.)
+👩🏻‍💼 » /vplay - Videoyu oynatmak için şarkı başlığını veya youtube bağlantısını veya video dosyasını vererek bunu yazın. (Bu komutu kullanarak YouTube canlı videosunu oynatmayı unutmayın!, çünkü bu öngörülemeyen sorunlara neden olacaktır..)
 
-👩🏻‍💼 » /vstream - Type this with give the YouTube live stream video link or m3u8 link to play live Video. (Remember to don't play local audio/video files or non-live YouTube video by using this command!, because it will cause unforeseen problems.)
+👩🏻‍💼 » /vstream - Canlı Video oynatmak için YouTube canlı akış video bağlantısını veya m3u8 bağlantısını vererek bunu yazın. (Bu komutu kullanarak yerel ses/video dosyalarını veya canlı olmayan YouTube videolarını oynatmayı unutmayın!, çünkü bu öngörülemeyen sorunlara neden olacaktır..)
 
-🤷 » /skip - to Skip current song
+🤷 » /skip - Geçerli şarkıyı atlamak için
 
-🙋 » /end - to end play song in vc
-
- **✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Kɪɢᴏ!** """,
+🙋 » /end - vc'de şarkı çalmayı bitirmek için """,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbstart")]]
+            [[InlineKeyboardButton("🔙 Geri Dön", callback_data="cbstart")]]
         ),
     )
 
@@ -124,40 +122,38 @@ async def cbbasic(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbadmin"))
 async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""🏮 here is the admin commands:
+        f"""🏮 işte admin komutları:
 
-➯ /pause - pause the stream
-➯ /resume - resume the stream
-➯ /skip - switch to next stream
-➯ /stop - stop the streaming
-➯ /vmute - mute the userbot on voice chat
-➯ /vunmute - unmute the userbot on voice chat
-➯ /volume `1-200` - adjust the volume of music (userbot must be admin)
-➯ /reload - reload bot and refresh the admin data
-➯ /userbotjoin - invite the userbot to join group
-➯ /userbotleave - order userbot to leave from group
+➯ /pause - akışı duraklat
+➯ /resume - akışı devam ettir
+➯ /skip - sonraki akışa geç
+➯ /stop - akışı durdur
+➯ /vmute - sesli sohbette userbot'u sessize al
+➯ /vunmute - sesli sohbette userbot'un sesini aç
+➯ /volume `1-200` - müziğin sesini ayarla (userbot yönetici olmalı)
+➯ /reload - botu yeniden yükleyin ve yönetici verilerini yenileyin
+➯ /userbotjoin - userbot'u gruba katılmaya davet et
+➯ /userbotleave - userbot'un gruptan ayrılmasını emret
 
 **✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Kɪɢᴏ!** """,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
+            [[InlineKeyboardButton("🔙 Geri Dön", callback_data="cbcmds")]]
         ),
     )
 
 @Client.on_callback_query(filters.regex("cbsudo"))
 async def cbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""🏮 here is the sudo commands:
+        f"""🏮 işte sudo komutları:
 
-➯ /rmw - clean all raw files
-➯ /rmd - clean all downloaded files
-➯ /sysinfo - show the system information
-➯ /update - update your bot to latest version
-➯ /restart - restart your bot
-➯ /leaveall - order userbot to leave from all group
-
-**✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Kɪɢᴏ!** """,
+➯ /rmw - tüm ham dosyaları temizle
+➯ /rmd - indirilen tüm dosyaları temizle
+➯ /sysinfo - sistem bilgilerini göster
+➯ /update - botunuzu en son sürüme güncelleyin
+➯ /restart - botunu yeniden başlat
+➯ /leaveall - userbot'un tüm gruptan ayrılmasını emret. """,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
+            [[InlineKeyboardButton("🔙 Geri Dön", callback_data="cbcmds")]]
         ),
     )
 
@@ -165,14 +161,14 @@ async def cbsudo(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbmenu"))
 async def cbmenu(_, query: CallbackQuery):
     if query.message.sender_chat:
-        return await query.answer("you're an Anonymous Admin !\n\n» revert back to user account from admin rights.")
+        return await query.answer("bir Anonim Yöneticisiniz!\n\n» yönetici haklarından kullanıcı hesabına geri dönün.")
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 only admin with manage voice chats permission that can tap this button !", show_alert=True)
+        return await query.answer("💡 yalnızca bu düğmeye dokunabilen sesli sohbetleri yönetme iznine sahip yönetici !", show_alert=True)
     chat_id = query.message.chat.id
     if chat_id in QUEUE:
           await query.edit_message_text(
-              f"⚙️ **settings of** {query.message.chat.title}\n\n⏸ : pause stream\n▶️ : resume stream\n🔇 : mute userbot\n🔊 : unmute userbot\n⏹ : stop stream",
+              f"⚙️ **Ayarlar** {query.message.chat.title}\n\n⏸ : Akışı duraklat\n▶️ : Akışı devam ettir\n🔇 : userbot sustur\n🔊 : userbot sesini aç\n⏹ : Akışı durdur",
               reply_markup=InlineKeyboardMarkup(
                   [[
                       InlineKeyboardButton("⏹", callback_data="cbstop"),
@@ -182,21 +178,20 @@ async def cbmenu(_, query: CallbackQuery):
                       InlineKeyboardButton("🔇", callback_data="cbmute"),
                       InlineKeyboardButton("🔊", callback_data="cbunmute"),
                   ],[
-                      InlineKeyboardButton("🗑 Close", callback_data="cls")],
+                      InlineKeyboardButton("🗑 KAPAT", callback_data="cls")],
                   ]
              ),
          )
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("❌ şu anda hiçbir şey yayınlanmıyor", show_alert=True)
 
 # SETUP BUTTON OPEN......................................................................................................................................................................................
 
 @Client.on_callback_query(filters.regex("cbsetup"))
 async def cbsetup(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""**Hello !**
-» **press the button below to read the explanation and see the help commands !**
-**✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Kɪɢᴏ!**""",
+        f"""**Merhaba !**
+» **açıklamayı okumak ve yardım komutlarını görmek için aşağıdaki butona basın !**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -256,5 +251,5 @@ async def noivoice(_, query: CallbackQuery):
 async def close(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 only admin with manage voice chats permission that can tap this button !", show_alert=True)
+        return await query.answer("💡 yalnızca bu düğmeye dokunabilen sesli sohbetleri yönetme iznine sahip yönetici !", show_alert=True)
     await query.message.delete()
