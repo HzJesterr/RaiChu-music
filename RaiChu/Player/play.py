@@ -140,14 +140,14 @@ async def play(c: Client, m: Message):
                       InlineKeyboardButton("⏭️", "skip"),
                       InlineKeyboardButton("▶️", callback_data="cbresume"),
                   ],[
-                      InlineKeyboardButton("• Group", url=f"https://t.me/OmFoXD"),
-                      InlineKeyboardButton("• Devloper", url=f"https://t.me/kigo_omfo"),
+                      InlineKeyboardButton("• Group", url=f"https://t.me/panthorasupport"),
+                      InlineKeyboardButton("• Devloper", url=f"https://t.me/yazilimcikari"),
                   ],[
                       InlineKeyboardButton("🗑", callback_data="cls")],
                   ]
              )
     if m.sender_chat:
-        return await m.reply_text("you're an __Anonymous__ Admin !\n\n» revert back to user account from admin rights.")
+        return await m.reply_text("__Anonim__ bir Yöneticisiniz!\n\n» yönetici haklarından kullanıcı hesabına geri dönün.")
     try:
         aing = await c.get_me()
     except Exception as e:
@@ -155,7 +155,7 @@ async def play(c: Client, m: Message):
     a = await c.get_chat_member(chat_id, aing.id)
     if a.status != "administrator":
         await m.reply_text(
-            f"💡 To use me, I need to be an **Administrator** with the following **permissions**:\n\n» ❌ __Delete messages__\n» ❌ __Add users__\n» ❌ __Manage video chat__\n\nData is **updated** automatically after you **promote me**"
+            f"💡 Beni kullanmak için aşağıdaki **izinlere** sahip bir **Yönetici** olmam gerekiyor:\n\n» ❌ __Mesajları sil__\n» ❌ __Kullanıcı ekle__\n» ❌ __Görüntülü sohbeti yönet__\n\nVeri * *güncellendi** sizden sonra otomatik olarak"
         )
         return
     if not a.can_manage_voice_chats:
@@ -165,18 +165,18 @@ async def play(c: Client, m: Message):
         return
     if not a.can_delete_messages:
         await m.reply_text(
-            "missing required permission:" + "\n\n» ❌ __Delete messages__"
+            "gerekli izin eksik:" + "\n\n» ❌ __Mesajları sil__"
         )
         return
     if not a.can_invite_users:
-        await m.reply_text("missing required permission:" + "\n\n» ❌ __Add users__")
+        await m.reply_text("gerekli izin eksik:" + "\n\n» ❌ __Kullanıcı ekle__")
         return
     try:
         ubot = (await user.get_me()).id
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "kicked":
             await m.reply_text(
-                f"@{ASSISTANT_NAME} **is banned in group** {m.chat.title}\n\n» **unban the userbot first if you want to use this bot.**"
+                f"@{ASSISTANT_NAME} **grupta yasaklanmıştır** {m.chat.title}\n\n» **Bu botu kullanmak istiyorsanız önce userbotun banını kaldırın.**"
             )
             return
     except UserNotParticipant:
@@ -184,7 +184,7 @@ async def play(c: Client, m: Message):
             try:
                 await user.join_chat(m.chat.username)
             except Exception as e:
-                await m.reply_text(f"❌ **userbot failed to join**\n\n**reason**: `{e}`")
+                await m.reply_text(f"❌ **userbot katılamadı**\n\n**sebep**: `{e}`")
                 return
         else:
             try:
@@ -200,11 +200,11 @@ async def play(c: Client, m: Message):
                 pass
             except Exception as e:
                 return await m.reply_text(
-                    f"❌ **userbot failed to join**\n\n**reason**: `{e}`"
+                    f"❌ **userbot katılamadı**\n\n**sebep**: `{e}`"
                 )
     if replied:
         if replied.audio or replied.voice:
-            suhu = await replied.reply("📥 **downloading audio...**")
+            suhu = await replied.reply("📥 **ses indiriliyor...**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -222,7 +222,7 @@ async def play(c: Client, m: Message):
                 await suhu.delete()
                 await m.reply_photo(
                     photo=f"{IMG_1}",
-                    caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **Name:** [{songname}]({link}) | `music`\n💭 **Chat:** `{chat_id}`\n🎧 **Request by:** {m.from_user.mention()}",
+                    caption=f"💡 **Parça sıraya eklendi »** `{pos}`\n\n🏷 **isim:** [{songname}]({link}) | `music`\n💭 **Chat:** `{chat_id}`\n🎧 **Talep eden:** {m.from_user.mention()}",
                     reply_markup=keyboard,
                 )
             else:
@@ -239,7 +239,7 @@ async def play(c: Client, m: Message):
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
                     photo=f"{IMG_2}",
-                    caption=f"🏷 **Name:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}\n📹 **Stream type:** `Music`",
+                    caption=f"🏷 **İsim:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n💡 **Durum:** `Playing`\n🎧 **Talep eden:** {requester}\n📹 **Akış türü:** `Music`",
                     reply_markup=keyboard,
                 )
              except Exception as e:
@@ -250,27 +250,27 @@ async def play(c: Client, m: Message):
         if len(m.command) < 2:
          await m.reply_photo(
                      photo=f"{IMG_5}",
-                    caption="💬**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**"
+                    caption="💬**Kullanım: /play Müzik Çalmak İçin Bir Başlık Şarkısı Verin veya Video Oynatmak için /vplay**"
                     ,
                       reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("💭 Support", url=f"https://t.me/OmFoXD")
+                            InlineKeyboardButton("💭 Support", url=f"https://t.me/panthorasupport")
                         ],
                         [
-                            InlineKeyboardButton("🗑 Close", callback_data="cls")
+                            InlineKeyboardButton("🗑 Kapat", callback_data="cls")
                         ]
                     ]
                 )
             )
         else:
             suhu = await m.reply_text(
-        f"**𝙆𝙄𝙂𝙊 Downloading**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+        f"** İndiriliyor**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
     )
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await suhu.edit("💬 **no results found.**")
+                await suhu.edit("💬 **Sonuç bulunamadı.**")
             else:
                 songname = search[0]
                 title = search[0]
@@ -284,7 +284,7 @@ async def play(c: Client, m: Message):
                 format = "bestaudio"
                 abhi, ytlink = await ytdl(format, url)
                 if abhi == 0:
-                    await suhu.edit(f"💬 yt-dl issues detected\n\n» `{ytlink}`")
+                    await suhu.edit(f"💬 yt-dl sorunları algılandı\n\n» `{ytlink}`")
                 else:
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
@@ -294,13 +294,13 @@ async def play(c: Client, m: Message):
                         )
                         await m.reply_photo(
                             photo=image,
-                            caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **Name:** [{songname[:22]}]({url}) | `music`\n**⏱ Duration:** `{duration}`\n🎧 **Request by:** {requester}",
+                            caption=f"💡 **Parça sıraya eklendi »** `{pos}`\n\n🏷 **İsim:** [{songname[:22]}]({url}) | `music`\n**⏱ Süre:** `{duration}`\n🎧 **Talep eden:** {requester}",
                             reply_markup=keyboard,
                         )
                     else:
                         try:
                             await suhu.edit(
-                            f"**𝙉𝙪𝙡𝙡 Downloader**\n\n**Title**: {title[:22]}\n\n100% ████████████100%\n\n**Time Taken**: 00:00 Seconds\n\n**Converting Audio[FFmpeg Process]**"
+                            f"** indirici**\n\n**Başlık**: {title[:22]}\n\n100% ████████████100%\n\n**Geçen süre**: 00:00 saniye\n\n**Ses Dönüştürme[FFmpeg Process]**"
                         )
                             await call_py.join_group_call(
                                 chat_id,
@@ -314,7 +314,7 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=image,
-                                caption=f"🏷 **Name:** [{songname[:22]}]({url})\n**⏱ Duration:** `{duration}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}",
+                                caption=f"🏷 **İsim:** [{songname[:22]}]({url})\n**⏱ Süre:** `{duration}`\n💡 **Durum:** `Playing`\n🎧 **Talep eden:** {requester}",
                                 reply_markup=keyboard,
                             )
                         except Exception as ep:
