@@ -33,32 +33,33 @@ async def _human_time_duration(seconds):
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
         await message.reply_text(
-        f"""**I ᴀᴍ 𝘽𝙤𝙩 𝘿𝙪𝙣𝙞𝙮𝙖 𝙈𝙪𝙨𝙞𝙘   
-ʙᴏᴛ ʜᴀɴᴅʟᴇ ʙʏ [KIGO](https://t.me/INSANE_BOTS)
-Thanks to add me 😇**
+        f"""** Merhaba , ben Panthora ✋
+
+              Telegram görüntülü sohbetinde müzik ve video hatta YouTube uzerinden canlı yayın oynatabilirim.😁😁
+              Powered by ❤️ @panthorasupport**
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Handle", url="https://t.me/Shubhanshutya"
+                        "**Sahibim**", url="https://t.me/yazilimcikari"
                     ),
                     InlineKeyboardButton(
-                        "𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐋𝐢𝐬𝐭", callback_data="cbbasic"
+                        "**Komutlar**", callback_data="cbcmds"
                     ),
                     InlineKeyboardButton(
-                        "How to add me🤷", callback_data="cbhowtouse"
+                        "Beni nasıl eklersin ? 🤠", callback_data="cbhowtouse"
                     ),
                   ],[
                     InlineKeyboardButton(
-                       " 𝐒𝐮𝐩𝐩𝐨𝐫𝐭👿", url="https://t.me/godzilla_chatting"
+                       " 𝐒𝐮𝐩𝐩𝐨𝐫𝐭👿", url="https://t.me/panthorasupport"
                     ),
                     InlineKeyboardButton(
-                        "𝐔𝐩𝐝𝐚𝐭𝐞𝐬", url="https://t.me/INSANE_BOTS"
+                        "𝐔𝐩𝐝𝐚𝐭𝐞𝐬", url="https://t.me/panthorabots"
                     )
                 ],[
                     InlineKeyboardButton(
-                        "➕ 𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩➕",
+                        "➕ **Gruba Ekle** ➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ]
