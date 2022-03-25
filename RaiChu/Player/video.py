@@ -177,9 +177,7 @@ async def vplay(c: Client, m: Message):
             if len(m.command) < 2:
                 await m.reply_photo(
                      photo=f"{IMG_6}",
-                    caption=
-"💬**Kullanım: /play Müzik Çalmak İçin Bir Başlık Şarkısı Verin veya Video Oynatmak için /vplay
-**"
+                    caption= "💬**Kullanım: /play Müzik Çalmak İçin Bir Başlık Şarkısı Verin veya Video Oynatmak için /vplay**"
                     ,
                       reply_markup=InlineKeyboardMarkup(
                     [
