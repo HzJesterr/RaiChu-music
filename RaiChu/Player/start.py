@@ -33,16 +33,16 @@ async def _human_time_duration(seconds):
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
         await message.reply_text(
-        f"""** Merhaba , ben Panthora ✋
+        f"""** Merhaba , ben Jester Music Bot ✋
 
               Telegram görüntülü sohbetinde müzik ve video hatta YouTube uzerinden canlı yayın oynatabilirim.😁😁
-              Powered by ❤️ @panthorasupport**
+              Powered by ❤️ @zmonios**
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "**Sahibim**", url="https://t.me/yazilimcikari"
+                        "**Sahibim**", url="https://t.me/sarikola"
                     ),
                     InlineKeyboardButton(
                         "**Komutlar**", callback_data="cbcmds"
@@ -52,10 +52,10 @@ async def start(_, message: Message):
                     ),
                   ],[
                     InlineKeyboardButton(
-                       " 𝐒𝐮𝐩𝐩𝐨𝐫𝐭👿", url="https://t.me/panthorasupport"
+                       " 𝐒𝐮𝐩𝐩𝐨𝐫𝐭👿", url="https://t.me/zmonios"
                     ),
                     InlineKeyboardButton(
-                        "𝐔𝐩𝐝𝐚𝐭𝐞𝐬", url="https://t.me/panthorabots"
+                        "𝐔𝐩𝐝𝐚𝐭𝐞𝐬", url="https://t.me/zmonbots"
                     )
                 ],[
                     InlineKeyboardButton(
